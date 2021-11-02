@@ -2,9 +2,13 @@
 <html lang="ja" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>タイトル</title>
+<title>表示画面</title>
 </head>
 <body>
-ページコンテンツ
+	<h2>合計金額</h2>
+	■税抜き価格<span th:text="${#numbers.formatInteger(application.taxIncluded, 4, 'COMMA')}">dummy</span>円
+	<br>
+	<br>
+	■税込み価格<span th:text="${#numbers.formatInteger(application.taxExcluded, 4, 'COMMA')}">dummy</span>円
 </body>
 </html>

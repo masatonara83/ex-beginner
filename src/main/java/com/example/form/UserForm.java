@@ -12,9 +12,13 @@ public class UserForm {
 	private String name;
 	@NotNull(message="年齢を入力してください")
 	@Range(min=0, max=200, message="０歳から２００歳で入力してください")
-	private Integer age;
+	private String age;
 	@Size(min=1,max=2000, message="１文字以上２０００文字以内で入力してください")
 	private String comment;
+	
+	public int getIntAge() {
+		return Integer.parseInt(age);
+	}
 
 	public String getName() {
 		return name;
@@ -24,11 +28,11 @@ public class UserForm {
 		this.name = name;
 	}
 
-	public Integer getAge() {
+	public String getAge() {
 		return age;
 	}
 
-	public void setAge(Integer age) {
+	public void setAge(String age) {
 		this.age = age;
 	}
 
